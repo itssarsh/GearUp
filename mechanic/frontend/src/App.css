@@ -1,0 +1,6 @@
+.app-shell {
+  min-height: 100vh;
+  color: #112136;
+  width: 100%;
+  overflow-x: hidden;
+}
