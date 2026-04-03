@@ -8,7 +8,7 @@ import {
   getStoredToken,
   isAuthError,
 } from "../../utils/session";
-import { formatDisplayDate } from "../../utils/formatters";
+// import { formatDisplayDate } from "../../utils/formatters";
 import "./PortalFeedback.css";
 
 const REVIEW_FORMAT_PREFIX = "__feedback_v1__";
@@ -56,35 +56,35 @@ function parseReviewAnswers(reviewText, questions) {
   }
 }
 
-function getReviewPreview(reviewText, questions) {
-  const answers = parseReviewAnswers(reviewText, questions);
-  const firstAnswer = (questions || [])
-    .map((field) => answers[field.key])
-    .find((answer) => String(answer || "").trim());
+// function getReviewPreview(reviewText, questions) {
+//   const answers = parseReviewAnswers(reviewText, questions);
+//   const firstAnswer = (questions || [])
+//     .map((field) => answers[field.key])
+//     .find((answer) => String(answer || "").trim());
 
-  return firstAnswer || String(reviewText || "").trim() || "No written feedback shared.";
-}
+//   return firstAnswer || String(reviewText || "").trim() || "No written feedback shared.";
+// }
 
-function getAnsweredReviewItems(reviewText, questions) {
-  const answers = parseReviewAnswers(reviewText, questions);
-  const reviewItems = (questions || [])
-    .map((field) => ({
-      question: field.question,
-      answer: answers[field.key],
-    }))
-    .filter((item) => String(item.answer || "").trim());
+// function getAnsweredReviewItems(reviewText, questions) {
+//   const answers = parseReviewAnswers(reviewText, questions);
+//   const reviewItems = (questions || [])
+//     .map((field) => ({
+//       question: field.question,
+//       answer: answers[field.key],
+//     }))
+//     .filter((item) => String(item.answer || "").trim());
 
-  if (reviewItems.length > 0) {
-    return reviewItems;
-  }
+//   if (reviewItems.length > 0) {
+//     return reviewItems;
+//   }
 
-  return [
-    {
-      question: "Feedback",
-      answer: getReviewPreview(reviewText, questions),
-    },
-  ];
-}
+//   return [
+//     {
+//       question: "Feedback",
+//       answer: getReviewPreview(reviewText, questions),
+//     },
+//   ];
+// }
 
 export default function CustomerPortalFeedbackPage() {
   const [feedbackQuestions, setFeedbackQuestions] = useState([]);
@@ -297,7 +297,7 @@ export default function CustomerPortalFeedbackPage() {
               </form>
             )}
           </article>
-
+{/* 
           <article className="portal-feedback-card">
             <div className="portal-feedback-card__header">
               <p className="portal-feedback-card__eyebrow">Latest Reviews</p>
@@ -343,7 +343,7 @@ export default function CustomerPortalFeedbackPage() {
                 </div>
               )}
             </div>
-          </article>
+          </article> */}
         </section>
       </div>
     </section>

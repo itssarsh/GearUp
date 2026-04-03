@@ -298,6 +298,10 @@
   justify-content: flex-start;
 }
 
+input::placeholder {
+  color: gray; /* placeholder color */
+}
+
 .chat-message__bubble {
   width: min(78%, 220px);
   padding: 12px 15px;

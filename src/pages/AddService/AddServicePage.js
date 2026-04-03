@@ -361,257 +361,255 @@ export default function CustomerAddServiceRecordPage() {
     <section className="add-service-page">
       <div className="add-service-page__backdrop"></div>
 
-      <div className="add-service-layout">
-        <div className="add-service-hero">
-          <div className="add-service-hero__top">
-            <Link className="add-service-hero__back" to={getDashboardRoute()}>
-              Back to Dashboard
-            </Link>
-            <span className="add-service-hero__badge">
-              {isEditing ? "Edit Booking" : "Service Booking"}
-            </span>
-          </div>
-
-          <div className="add-service-hero__heading">
-            <h1>{isEditing ? "Refine the booking details before the workshop slot is confirmed." : "Create a service booking with clear timing, service scope, and transport preferences."}</h1>
-            <p>
-              Choose the vehicle, service package, preferred date and time, and whether
-              the workshop should arrange pickup and drop support.
-            </p>
-          </div>
-
-          <div className="add-service-hero__meta">
-            <article className="add-service-hero__meta-card add-service-hero__meta-card--wide">
-              <span>Selected vehicle</span>
-              <strong>
-                {selectedVehicle
-                  ? `${selectedVehicle.brand} ${selectedVehicle.model} • ${selectedVehicle.registration_number}`
-                  : "Choose a vehicle"}
-              </strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Progress</span>
-              <strong>{completedSteps}/5 ready</strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Service type</span>
-              <strong>{selectedServiceType.label}</strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Pickup & drop</span>
-              <strong>{selectedTransportOption.label}</strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Preferred date</span>
-              <strong>{bookingDateLabel}</strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Preferred time</span>
-              <strong>{preferredTimeLabel}</strong>
-            </article>
-            <article className="add-service-hero__meta-card">
-              <span>Preferred mechanic</span>
-              <strong>{selectedMechanic?.name || "No preference"}</strong>
-            </article>
-          </div>
+      <div className="add-service-hero">
+        <div className="add-service-hero__top">
+          <Link className="add-service-hero__back" to={getDashboardRoute()}>
+            Back to Dashboard
+          </Link>
+          <span className="add-service-hero__badge">
+            {isEditing ? "Edit Booking" : "Service Booking"}
+          </span>
         </div>
 
-        <form className="add-service-card" onSubmit={handleSubmit}>
-          <div className="add-service-card__header">
-            <p className="add-service-card__eyebrow">Service Booking</p>
-            <h2>{isEditing ? "Update booking details" : "Create workshop booking"}</h2>
-            <span>
-              Once submitted, this booking appears on the dashboard for tracking, updates, and follow-up actions.
-            </span>
+        <div className="add-service-hero__heading">
+          <h1>{isEditing ? "Refine the booking details before the workshop slot is confirmed." : "Create a service booking with clear timing, service scope, and transport preferences."}</h1>
+          <p>
+            Choose the vehicle, service package, preferred date and time, and whether
+            the workshop should arrange pickup and drop support.
+          </p>
+        </div>
+
+        <div className="add-service-hero__meta">
+          <article className="add-service-hero__meta-card add-service-hero__meta-card--wide">
+            <span>Selected vehicle</span>
+            <strong>
+              {selectedVehicle
+                ? `${selectedVehicle.brand} ${selectedVehicle.model} • ${selectedVehicle.registration_number}`
+                : "Choose a vehicle"}
+            </strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Progress</span>
+            <strong>{completedSteps}/5 ready</strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Service type</span>
+            <strong>{selectedServiceType.label}</strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Pickup & drop</span>
+            <strong>{selectedTransportOption.label}</strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Preferred date</span>
+            <strong>{bookingDateLabel}</strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Preferred time</span>
+            <strong>{preferredTimeLabel}</strong>
+          </article>
+          <article className="add-service-hero__meta-card">
+            <span>Preferred mechanic</span>
+            <strong>{selectedMechanic?.name || "No preference"}</strong>
+          </article>
+        </div>
+      </div>
+
+      <form className="add-service-card" onSubmit={handleSubmit}>
+        <div className="add-service-card__header">
+          <p className="add-service-card__eyebrow">Service Booking</p>
+          <h2>{isEditing ? "Update booking details" : "Create workshop booking"}</h2>
+          <span>
+            Once submitted, this booking appears on the dashboard for tracking, updates, and follow-up actions.
+          </span>
+        </div>
+
+        <div className="add-service-card__section">
+          <div className="add-service-card__section-head">
+            <div>
+              <h3>1. Vehicle & service type</h3>
+              <p>Select the registered vehicle and the level of service you want the workshop to perform.</p>
+            </div>
+            <span className="add-service-card__section-tag">Required</span>
           </div>
 
-          <div className="add-service-card__section">
-            <div className="add-service-card__section-head">
-              <div>
-                <h3>1. Vehicle & service type</h3>
-                <p>Select the registered vehicle and the level of service you want the workshop to perform.</p>
-              </div>
-              <span className="add-service-card__section-tag">Required</span>
-            </div>
-
-            <div className="add-service-card__grid">
-              <label className="add-service-card__field">
-                <span>Vehicle</span>
-                <select name="vehicleId" value={form.vehicleId} onChange={handleChange}>
-                  {vehicles.map((vehicle) => (
-                    <option key={vehicle.id} value={vehicle.id}>
-                      {vehicle.brand} {vehicle.model} • {vehicle.registration_number}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-
-            <div className="add-service-card__choices">
-              {SERVICE_TYPES.map((serviceType) => (
-                <label className="add-service-choice" key={serviceType.value}>
-                  <input
-                    checked={form.serviceType === serviceType.value}
-                    name="serviceType"
-                    onChange={handleChange}
-                    type="radio"
-                    value={serviceType.value}
-                  />
-                  <span className="add-service-choice__content">
-                    <strong>{serviceType.label}</strong>
-                    <span>{serviceType.description}</span>
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <div className="add-service-card__section add-service-card__section--schedule">
-            <div className="add-service-card__section-head">
-              <div>
-                <h3>2. Date & preferred time</h3>
-                <p>Choose the date and preferred arrival window that best fits your schedule.</p>
-              </div>
-              <span className="add-service-card__section-tag">Required</span>
-            </div>
-
-            <div className="add-service-schedule">
-              <div className="add-service-schedule__summary">
-                <div>
-                  <span className="add-service-card__field-badge">Selected visit timing</span>
-                  <strong>{bookingDateLabel}</strong>
-                  <p>{preferredTimeLabel}</p>
-                </div>
-
-                <div className="add-service-schedule__summary-note">
-                  <span>Booking type</span>
-                  <strong>Time picker</strong>
-                </div>
-              </div>
-
-              <div className="add-service-card__grid add-service-card__grid--single">
-                <label className="add-service-card__field add-service-card__field--date">
-                  <span>Preferred date</span>
-                  <div className="add-service-card__input-shell add-service-card__input-shell--date">
-                    <input
-                      min={getTodayDateInputValue()}
-                      name="bookingDate"
-                      onChange={handleChange}
-                      type="date"
-                      value={form.bookingDate}
-                    />
-                  </div>
-                </label>
-
-                <label className="add-service-card__field add-service-card__field--time">
-                  <span>Preferred time</span>
-                  <div className="add-service-card__input-shell add-service-card__input-shell--time">
-                    <input
-                      max="18:00"
-                      min="09:00"
-                      name="bookingTimeSlot"
-                      onChange={handleChange}
-                      step="1800"
-                      type="time"
-                      value={form.bookingTimeSlot}
-                    />
-                  </div>
-                  <small className="add-service-card__field-help">
-                    Select a preferred workshop time between 09:00 AM and 06:00 PM.
-                  </small>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div className="add-service-card__section">
-            <div className="add-service-card__section-head">
-              <div>
-                <h3>3. Preferred mechanic</h3>
-                <p>Select a mechanic only if you have a clear preference. Otherwise the workshop can assign the best fit.</p>
-              </div>
-              <span className="add-service-card__section-tag add-service-card__section-tag--optional">
-                Optional
-              </span>
-            </div>
-
-            <div className="add-service-card__grid">
-              <label className="add-service-card__field">
-                <span>Preferred mechanic</span>
-                <select name="mechanicId" value={form.mechanicId} onChange={handleChange}>
-                  <option value="">No preference</option>
-                  {mechanics.map((mechanic) => (
-                    <option key={mechanic.id} value={mechanic.id}>
-                      {mechanic.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          </div>
-
-          <div className="add-service-card__section">
-            <div className="add-service-card__section-head">
-              <div>
-                <h3>4. Pickup & drop option</h3>
-                <p>Tell us whether you will visit the workshop yourself or need managed vehicle pickup support.</p>
-              </div>
-              <span className="add-service-card__section-tag">Required</span>
-            </div>
-
-            <div className="add-service-card__choices add-service-card__choices--transport">
-              {TRANSPORT_OPTIONS.map((option) => (
-                <label className="add-service-choice" key={option.value}>
-                  <input
-                    checked={form.transportOption === option.value}
-                    name="transportOption"
-                    onChange={handleChange}
-                    type="radio"
-                    value={option.value}
-                  />
-                  <span className="add-service-choice__content">
-                    <strong>{option.label}</strong>
-                    <span>{option.description}</span>
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <div className="add-service-card__section">
-            <div className="add-service-card__section-head">
-              <div>
-                <h3>5. Notes for the workshop</h3>
-                <p>Optional notes help the team prepare parts, checks, or diagnostics before the booking starts.</p>
-              </div>
-              <span className="add-service-card__section-tag add-service-card__section-tag--optional">
-                Optional
-              </span>
-            </div>
-
-            <label className="add-service-card__field add-service-card__field--span-2">
-              <div className="add-service-card__field-label">
-              </div>
-              <textarea
-                name="concern"
-                onChange={handleChange}
-                placeholder="Share symptoms, service requests, unusual sounds, warning lights, or anything the workshop should know in advance"
-                value={form.concern}
-              />
+          <div className="add-service-card__grid">
+            <label className="add-service-card__field">
+              <span>Vehicle</span>
+              <select name="vehicleId" value={form.vehicleId} onChange={handleChange}>
+                {vehicles.map((vehicle) => (
+                  <option key={vehicle.id} value={vehicle.id}>
+                    {vehicle.brand} {vehicle.model} • {vehicle.registration_number}
+                  </option>
+                ))}
+              </select>
             </label>
           </div>
 
-          <button className="add-service-card__button" disabled={isSaving} type="submit">
-            {isSaving
-              ? isEditing
-                ? "Updating booking..."
-                : "Booking service..."
-              : isEditing
-                ? "Save Booking Changes"
-                : "Create Service Booking"}
-          </button>
-        </form>
-      </div>
+          <div className="add-service-card__choices">
+            {SERVICE_TYPES.map((serviceType) => (
+              <label className="add-service-choice" key={serviceType.value}>
+                <input
+                  checked={form.serviceType === serviceType.value}
+                  name="serviceType"
+                  onChange={handleChange}
+                  type="radio"
+                  value={serviceType.value}
+                />
+                <span className="add-service-choice__content">
+                  <strong>{serviceType.label}</strong>
+                  <span>{serviceType.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="add-service-card__section add-service-card__section--schedule">
+          <div className="add-service-card__section-head">
+            <div>
+              <h3>2. Date & preferred time</h3>
+              <p>Choose the date and preferred arrival window that best fits your schedule.</p>
+            </div>
+            <span className="add-service-card__section-tag">Required</span>
+          </div>
+
+          <div className="add-service-schedule">
+            <div className="add-service-schedule__summary">
+              <div>
+                <span className="add-service-card__field-badge">Selected visit timing</span>
+                <strong>{bookingDateLabel}</strong>
+                <p>{preferredTimeLabel}</p>
+              </div>
+
+              <div className="add-service-schedule__summary-note">
+                <span>Booking type</span>
+                <strong>Time picker</strong>
+              </div>
+            </div>
+
+            <div className="add-service-card__grid add-service-card__grid--single">
+              <label className="add-service-card__field add-service-card__field--date">
+                <span class="black-text">Preferred date</span>
+                <div className="add-service-card__input-shell add-service-card__input-shell--date">
+                  <input
+                    min={getTodayDateInputValue()}
+                    name="bookingDate"
+                    onChange={handleChange}
+                    type="date"
+                    value={form.bookingDate}
+                  />
+                </div>
+              </label>
+
+              <label className="add-service-card__field add-service-card__field--time">
+                <span class="black-text">Preferred Time (Between 09:00 AM – 06:00 PM)</span>
+                <div className="add-service-card__input-shell add-service-card__input-shell--time">
+                  <input
+                    max="18:00"
+                    min="09:00"
+                    name="bookingTimeSlot"
+                    onChange={handleChange}
+                    step="1800"
+                    type="time"
+                    value={form.bookingTimeSlot}
+                  />
+                </div>
+                {/* <small className="add-service-card__field-help">
+                    Select a preferred workshop time between 09:00 AM and 06:00 PM.
+                  </small> */}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div className="add-service-card__section">
+          <div className="add-service-card__section-head">
+            <div>
+              <h3>3. Preferred mechanic</h3>
+              <p>Select a mechanic only if you have a clear preference. Otherwise the workshop can assign the best fit.</p>
+            </div>
+            <span className="add-service-card__section-tag add-service-card__section-tag--optional">
+              Optional
+            </span>
+          </div>
+
+          <div className="add-service-card__grid">
+            <label className="add-service-card__field">
+              <span>Preferred mechanic</span>
+              <select name="mechanicId" value={form.mechanicId} onChange={handleChange}>
+                <option value="">No preference</option>
+                {mechanics.map((mechanic) => (
+                  <option key={mechanic.id} value={mechanic.id}>
+                    {mechanic.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div className="add-service-card__section">
+          <div className="add-service-card__section-head">
+            <div>
+              <h3>4. Pickup & drop option</h3>
+              <p>Tell us whether you will visit the workshop yourself or need managed vehicle pickup support.</p>
+            </div>
+            <span className="add-service-card__section-tag">Required</span>
+          </div>
+
+          <div className="add-service-card__choices add-service-card__choices--transport">
+            {TRANSPORT_OPTIONS.map((option) => (
+              <label className="add-service-choice" key={option.value}>
+                <input
+                  checked={form.transportOption === option.value}
+                  name="transportOption"
+                  onChange={handleChange}
+                  type="radio"
+                  value={option.value}
+                />
+                <span className="add-service-choice__content">
+                  <strong>{option.label}</strong>
+                  <span>{option.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="add-service-card__section">
+          <div className="add-service-card__section-head">
+            <div>
+              <h3>5. Notes for the workshop</h3>
+              <p>Optional notes help the team prepare parts, checks, or diagnostics before the booking starts.</p>
+            </div>
+            <span className="add-service-card__section-tag add-service-card__section-tag--optional">
+              Optional
+            </span>
+          </div>
+
+          <label className="add-service-card__field add-service-card__field--span-2">
+            <div className="add-service-card__field-label">
+            </div>
+            <textarea
+              name="concern"
+              onChange={handleChange}
+              placeholder="Describe your issue (symptoms, sounds, warning lights, etc.)"
+              value={form.concern}
+            />
+          </label>
+        </div>
+
+        <button className="add-service-card__button" disabled={isSaving} type="submit">
+          {isSaving
+            ? isEditing
+              ? "Updating booking..."
+              : "Booking service..."
+            : isEditing
+              ? "Save Booking Changes"
+              : "Create Service Booking"}
+        </button>
+      </form>
     </section>
   );
 }

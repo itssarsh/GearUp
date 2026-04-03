@@ -157,7 +157,6 @@
 }
 
 .portal-feedback-grid {
-  display: grid;
   grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.92fr);
   gap: 24px;
 }

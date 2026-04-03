@@ -162,7 +162,6 @@
 .complaint-hero,
 .mechanic-rating-hero,
 .emergency-hero {
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
   align-items: start;
 }
 
@@ -239,7 +238,7 @@
 .mechanic-rating-hero__description,
 .emergency-hero__copy,
 .chat-header__copy {
-  color: var(--color-text-soft);
+  color: #707274;
   font-size: 1rem;
 }
 
@@ -390,7 +389,6 @@
   justify-content: center;
   min-height: 3rem;
   padding: 0 1rem;
-  border-radius: 999px;
   border: 1px solid transparent;
   background: linear-gradient(135deg, var(--color-primary-strong), var(--color-primary));
   color: #fff7f1;
@@ -549,7 +547,6 @@
 .mechanic-rating-card__header,
 .emergency-board__header,
 .chat-panel__header {
-  display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.75rem;
@@ -975,7 +972,6 @@
 
 .edit-profile-form,
 .change-password-form,
-.portal-feedback-form,
 .complaint-form,
 .mechanic-rating-form,
 .emergency-form__grid {
@@ -1094,7 +1090,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 1.7rem;
-  padding: 0 0.7rem;
+  /* padding: 0 0.7rem; */
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-secondary-soft) 72%, var(--color-surface-strong) 28%);
   color: var(--color-secondary-strong);

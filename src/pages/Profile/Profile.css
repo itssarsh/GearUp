@@ -263,7 +263,6 @@
 }
 
 .profile-summary__status-item--completion {
-  display: flex;
   align-items: center;
   gap: 10px;
   grid-column: 1 / -1;
