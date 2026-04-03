@@ -1,0 +1,105 @@
+.toast-stack {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(22rem, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.toast {
+  display: grid;
+  grid-template-columns: 0.4rem 1fr auto;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.95rem 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(198, 116, 52, 0.1), transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-panel-raised) 96%, black 4%), color-mix(in srgb, var(--color-panel) 92%, black 8%));
+  box-shadow: var(--shadow-xl);
+  color: #fff5e9;
+  pointer-events: auto;
+  animation: toast-slide-in 220ms var(--ease-standard);
+}
+
+.toast__indicator {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 999px;
+  background: #8fd7ff;
+}
+
+.toast__body {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.toast__title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.toast__content {
+  color: rgba(255, 242, 226, 0.8);
+}
+
+.toast__close {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 245, 233, 0.74);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.toast__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fffdf9;
+}
+
+.toast--success .toast__indicator {
+  background: #47d1a2;
+}
+
+.toast--error .toast__indicator {
+  background: #ff8f85;
+}
+
+.toast--warning .toast__indicator {
+  background: #ffc772;
+}
+
+.toast--info .toast__indicator {
+  background: #79b8ff;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem) translateX(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .toast-stack {
+    top: 0.75rem;
+    right: 0.75rem;
+    left: 0.75rem;
+    width: auto;
+  }
+}

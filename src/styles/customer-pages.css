@@ -1,0 +1,1623 @@
+.dashboard-page,
+.add-product-page,
+.add-service-page,
+.profile-page,
+.edit-profile-page,
+.change-password-page,
+.notifications-page,
+.portal-feedback-page,
+.complaint-page,
+.mechanic-rating-page,
+.emergency-page,
+.chat-page {
+  position: relative;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(198, 116, 52, 0.08), transparent 20%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-bg-elevated) 82%, white 18%), var(--color-bg));
+}
+
+.dashboard-page__backdrop,
+.add-product-page__backdrop,
+.add-service-page__backdrop,
+.profile-page__backdrop,
+.edit-profile-page__backdrop,
+.change-password-page__backdrop,
+.notifications-page__backdrop,
+.portal-feedback-page__backdrop,
+.complaint-page__backdrop,
+.mechanic-rating-page__backdrop,
+.emergency-page__backdrop,
+.chat-page__backdrop,
+.edit-profile-page__mesh,
+.change-password-page__mesh,
+.portal-feedback-page__mesh,
+.complaint-page__mesh,
+.mechanic-rating-page__mesh {
+  position: absolute;
+  inset: 0;
+}
+
+.dashboard-page__backdrop,
+.add-product-page__backdrop,
+.add-service-page__backdrop,
+.profile-page__backdrop,
+.edit-profile-page__backdrop,
+.change-password-page__backdrop,
+.notifications-page__backdrop,
+.portal-feedback-page__backdrop,
+.complaint-page__backdrop,
+.mechanic-rating-page__backdrop,
+.emergency-page__backdrop,
+.chat-page__backdrop {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(14, 126, 132, 0.08), transparent 20%),
+    linear-gradient(180deg, transparent, transparent);
+  pointer-events: none;
+}
+
+.edit-profile-page__mesh,
+.change-password-page__mesh,
+.portal-feedback-page__mesh,
+.complaint-page__mesh,
+.mechanic-rating-page__mesh {
+  opacity: 0.46;
+  background-image: var(--grid-overlay);
+  background-size: 2rem 2rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.38), transparent 84%);
+  pointer-events: none;
+}
+
+.dashboard-shell,
+.add-product-layout,
+.add-service-layout,
+.profile-container,
+.edit-profile-container,
+.change-password-container,
+.notifications-shell,
+.portal-feedback-container,
+.complaint-container,
+.mechanic-rating-container,
+.emergency-shell,
+.chat-shell {
+  position: relative;
+  z-index: 1;
+  width: min(var(--page-content-width), 100%);
+  margin: 0 auto;
+}
+
+.dashboard-shell,
+.profile-container,
+.edit-profile-container,
+.change-password-container,
+.notifications-shell,
+.portal-feedback-container,
+.complaint-container,
+.mechanic-rating-container,
+.emergency-shell,
+.chat-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.add-product-layout,
+.add-service-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 1.05fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.dashboard-hero,
+.add-product-hero,
+.add-service-hero,
+.profile-hero,
+.edit-profile-hero,
+.change-password-hero,
+.notifications-hero,
+.portal-feedback-hero,
+.complaint-hero,
+.mechanic-rating-hero,
+.emergency-hero,
+.chat-header {
+  position: relative;
+  overflow: clip;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-lg);
+  background:
+    radial-gradient(circle at top right, rgba(198, 116, 52, 0.12), transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-strong) 92%, white 8%), color-mix(in srgb, var(--color-surface) 96%, var(--color-bg) 4%));
+}
+
+.dashboard-hero::before,
+.add-product-hero::before,
+.add-service-hero::before,
+.profile-hero::before,
+.edit-profile-hero::before,
+.change-password-hero::before,
+.notifications-hero::before,
+.portal-feedback-hero::before,
+.complaint-hero::before,
+.mechanic-rating-hero::before,
+.emergency-hero::before,
+.chat-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(198, 116, 52, 0.08) 0 3px, transparent 3px),
+    linear-gradient(rgba(255, 255, 255, 0.26), transparent 22%);
+  opacity: 0.6;
+}
+
+.dashboard-hero,
+.notifications-hero,
+.portal-feedback-hero,
+.complaint-hero,
+.mechanic-rating-hero,
+.emergency-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+  align-items: start;
+}
+
+.profile-hero,
+.edit-profile-hero,
+.change-password-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+  align-items: start;
+}
+
+.dashboard-hero__content,
+.add-product-hero__heading,
+.add-service-hero__heading,
+.profile-hero__content,
+.edit-profile-hero__content,
+.change-password-hero__content,
+.notifications-hero__content,
+.portal-feedback-hero__content,
+.complaint-hero__content,
+.mechanic-rating-hero__content,
+.emergency-hero__content {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.dashboard-hero__eyebrow,
+.notifications-hero__eyebrow,
+.profile-hero__eyebrow,
+.edit-profile-hero__eyebrow,
+.change-password-hero__eyebrow,
+.portal-feedback-hero__eyebrow,
+.complaint-hero__eyebrow,
+.mechanic-rating-hero__eyebrow,
+.emergency-hero__eyebrow,
+.chat-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  width: fit-content;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-secondary) 10%, var(--color-surface-strong) 90%);
+  color: var(--color-secondary-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dashboard-hero h1,
+.add-product-hero h1,
+.add-service-hero h1,
+.profile-hero h1,
+.edit-profile-hero h1,
+.change-password-hero h1,
+.notifications-hero h1,
+.portal-feedback-hero h1,
+.complaint-hero h1,
+.mechanic-rating-hero h1,
+.emergency-hero h1,
+.chat-header h1 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.dashboard-hero p,
+.add-product-hero p,
+.add-service-hero p,
+.profile-hero__description,
+.edit-profile-hero__description,
+.change-password-hero__description,
+.notifications-hero p,
+.portal-feedback-hero__description,
+.complaint-hero__description,
+.mechanic-rating-hero__description,
+.emergency-hero__copy,
+.chat-header__copy {
+  color: var(--color-text-soft);
+  font-size: 1rem;
+}
+
+.dashboard-hero__signalbar,
+.change-password-hero__meta,
+.add-product-hero__meta,
+.add-service-hero__meta,
+.notifications-hero__stats,
+.emergency-hero__stats {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.dashboard-hero__signalbar {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-hero__signal,
+.dashboard-stat,
+.notifications-stat,
+.emergency-stat,
+.portal-feedback-summary__metric,
+.add-product-hero__meta-card,
+.add-service-hero__meta-card {
+  position: relative;
+  overflow: clip;
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface) 86%, white 14%);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-hero__signal span,
+.dashboard-stat span,
+.notifications-stat span,
+.emergency-stat span,
+.portal-feedback-summary__metric span,
+.add-product-hero__meta-card span,
+.add-service-hero__meta-card span,
+.dashboard-hero__panel-label,
+.mechanic-rating-summary__label,
+.complaint-summary__label {
+  display: block;
+  color: var(--color-text-soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dashboard-hero__signal strong,
+.dashboard-stat strong,
+.notifications-stat strong,
+.emergency-stat strong,
+.portal-feedback-summary__metric strong,
+.add-product-hero__meta-card strong,
+.add-service-hero__meta-card strong,
+.mechanic-rating-summary strong,
+.complaint-summary strong {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--color-text-strong);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.dashboard-hero__panel,
+.profile-summary,
+.edit-profile-summary,
+.change-password-summary,
+.portal-feedback-summary,
+.complaint-summary,
+.mechanic-rating-summary {
+  position: relative;
+  overflow: clip;
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-xl);
+  background:
+    radial-gradient(circle at top right, rgba(198, 116, 52, 0.14), transparent 30%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-panel-raised) 96%, black 4%), color-mix(in srgb, var(--color-panel) 92%, black 8%));
+  color: var(--color-panel-text);
+}
+
+.dashboard-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.dashboard-hero__foot {
+  display: grid;
+  gap: 0.22rem;
+  margin-top: 1rem;
+  color: var(--color-panel-text-muted);
+}
+
+.dashboard-hero__foot strong {
+  color: var(--color-panel-text);
+  font-size: 1.1rem;
+}
+
+.add-product-hero__top,
+.add-service-hero__top,
+.notifications-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.add-product-hero__back,
+.add-service-hero__back,
+.notifications-hero__back,
+.profile-hero__secondary,
+.edit-profile-hero__secondary,
+.change-password-hero__secondary,
+.portal-feedback-hero__button,
+.complaint-hero__button,
+.mechanic-rating-hero__button,
+.emergency-hero__secondary,
+.dashboard-section__link,
+.dashboard-empty__button,
+.dashboard-card__action-button,
+.dashboard-card__edit,
+.notifications-card__action,
+.complaint-card__back,
+.chat-composer__actions button,
+.chat-composer__upload,
+.emergency-form__submit,
+.mechanic-rating-form__submit,
+.portal-feedback-form__submit,
+.complaint-form__submit,
+.add-product-card__button,
+.add-service-card__button,
+.edit-profile-form__submit,
+.edit-profile-form__back,
+.change-password-form__submit,
+.change-password-form__back,
+.notifications-board__button,
+.emergency-hero__button,
+.emergency-empty-state__actions a,
+.add-service-empty__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--color-primary-strong), var(--color-primary));
+  color: #fff7f1;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 18px 34px rgba(198, 116, 52, 0.18);
+}
+
+.add-product-hero__back,
+.add-service-hero__back,
+.notifications-hero__back,
+.profile-hero__secondary,
+.edit-profile-hero__secondary,
+.change-password-hero__secondary,
+.dashboard-section__link--button,
+.edit-profile-form__back,
+.change-password-form__back,
+.notifications-board__button,
+.emergency-hero__secondary,
+.add-service-empty__button--ghost {
+  background: color-mix(in srgb, var(--color-surface-strong) 84%, white 16%);
+  color: var(--color-text-strong);
+  border-color: var(--color-line);
+  box-shadow: none;
+}
+
+.dashboard-section__link--button {
+  border: 0;
+}
+
+.dashboard-card__action-button--ghost,
+.dashboard-card__action-button--dark {
+  background: color-mix(in srgb, var(--color-surface-strong) 84%, white 16%);
+  color: var(--color-text-strong);
+  border-color: var(--color-line);
+  box-shadow: none;
+}
+
+.dashboard-card__action-button--dark {
+  background: linear-gradient(135deg, var(--color-panel-raised), var(--color-panel));
+  color: #fff6ec;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-hero__button--danger,
+.dashboard-modal__button--danger {
+  background: linear-gradient(135deg, #9f3e35, var(--color-error));
+}
+
+.add-product-hero__back:hover,
+.add-service-hero__back:hover,
+.notifications-hero__back:hover,
+.profile-hero__secondary:hover,
+.edit-profile-hero__secondary:hover,
+.change-password-hero__secondary:hover,
+.notifications-board__button:hover,
+.dashboard-section__link:hover,
+.dashboard-empty__button:hover,
+.dashboard-card__action-button:hover,
+.dashboard-card__edit:hover,
+.notifications-card__action:hover,
+.chat-composer__actions button:hover,
+.chat-composer__upload:hover,
+.emergency-form__submit:hover,
+.mechanic-rating-form__submit:hover,
+.portal-feedback-form__submit:hover,
+.complaint-form__submit:hover,
+.add-product-card__button:hover,
+.add-service-card__button:hover,
+.edit-profile-form__submit:hover,
+.edit-profile-form__back:hover,
+.change-password-form__submit:hover,
+.change-password-form__back:hover,
+.emergency-hero__button:hover,
+.emergency-empty-state__actions a:hover,
+.add-service-empty__button:hover {
+  transform: translateY(-1px);
+}
+
+.add-product-hero__badge,
+.add-service-hero__badge,
+.notifications-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-soft) 80%, var(--color-surface-strong) 20%);
+  color: var(--color-primary-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dashboard-section,
+.notifications-board,
+.emergency-board,
+.profile-card,
+.edit-profile-card,
+.change-password-card,
+.change-password-side-card,
+.portal-feedback-card,
+.complaint-card,
+.mechanic-rating-card,
+.add-product-card,
+.add-service-card,
+.add-service-empty,
+.emergency-form,
+.emergency-empty-state,
+.chat-sidebar,
+.chat-panel {
+  position: relative;
+  overflow: clip;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  background:
+    radial-gradient(circle at top right, rgba(198, 116, 52, 0.08), transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-strong) 94%, white 6%), color-mix(in srgb, var(--color-surface) 96%, var(--color-bg) 4%));
+}
+
+.dashboard-section,
+.notifications-board,
+.profile-card,
+.edit-profile-card,
+.change-password-card,
+.change-password-side-card,
+.portal-feedback-card,
+.complaint-card,
+.mechanic-rating-card,
+.emergency-form,
+.emergency-board,
+.chat-sidebar,
+.chat-panel {
+  padding: 1.2rem;
+}
+
+.add-product-card,
+.add-service-card {
+  padding: 1.2rem;
+}
+
+.dashboard-section__header,
+.dashboard-card__top,
+.dashboard-card__footer,
+.dashboard-card__meta,
+.dashboard-card__timeline-header,
+.dashboard-card__actions,
+.notifications-board__header,
+.profile-card__header,
+.edit-profile-card__header,
+.change-password-card__header,
+.portal-feedback-card__header,
+.complaint-card__header,
+.mechanic-rating-card__header,
+.emergency-board__header,
+.chat-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.dashboard-section__header,
+.notifications-board__header,
+.emergency-board__header,
+.profile-card__header,
+.edit-profile-card__header,
+.change-password-card__header,
+.portal-feedback-card__header,
+.complaint-card__header,
+.mechanic-rating-card__header,
+.add-product-card__header,
+.add-service-card__header {
+  margin-bottom: 1rem;
+}
+
+.dashboard-section__header h2,
+.notifications-board__header h2,
+.profile-card__header h3,
+.edit-profile-card__header h2,
+.change-password-card__header h2,
+.portal-feedback-card__header h2,
+.complaint-card__header h2,
+.mechanic-rating-card__header h2,
+.emergency-board__header h2,
+.add-product-card__header h2,
+.add-service-card__header h2,
+.chat-panel__header h2 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.dashboard-section__header span,
+.notifications-board__header p,
+.profile-card__header span,
+.edit-profile-card__header span,
+.change-password-card__header span,
+.portal-feedback-card__header span,
+.complaint-card__header span,
+.mechanic-rating-card__header span,
+.emergency-board__header p,
+.add-product-card__header span,
+.add-service-card__header span {
+  color: var(--color-text-soft);
+}
+
+.dashboard-section__eyebrow,
+.notifications-board__eyebrow,
+.profile-card__eyebrow,
+.edit-profile-card__eyebrow,
+.change-password-card__eyebrow,
+.portal-feedback-card__eyebrow,
+.complaint-card__eyebrow,
+.mechanic-rating-card__eyebrow,
+.dashboard-card__tag,
+.add-product-card__eyebrow,
+.add-service-card__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-soft) 72%, var(--color-surface-strong) 28%);
+  color: var(--color-primary-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dashboard-expense-grid,
+.dashboard-health-grid,
+.dashboard-report-grid,
+.dashboard-grid,
+.profile-grid,
+.change-password-grid,
+.portal-feedback-grid,
+.complaint-grid,
+.mechanic-rating-grid,
+.emergency-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-expense-grid,
+.dashboard-health-grid,
+.dashboard-report-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-grid,
+.dashboard-health-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.change-password-grid,
+.portal-feedback-grid,
+.complaint-grid,
+.mechanic-rating-grid,
+.emergency-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+}
+
+.dashboard-expense-card,
+.dashboard-report-card,
+.dashboard-card,
+.dashboard-overview-card,
+.dashboard-health-card,
+.notifications-card,
+.emergency-card,
+.portal-feedback-review,
+.mechanic-rating-details__item,
+.complaint-details__item,
+.profile-detail,
+.dashboard-card__insight {
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface-strong) 90%, white 10%);
+}
+
+.dashboard-expense-card span,
+.dashboard-report-row span,
+.dashboard-card__meta span,
+.dashboard-card__footer span,
+.dashboard-vehicle-card__stat span,
+.dashboard-card__insight span,
+.profile-detail span,
+.mechanic-rating-details__item span,
+.complaint-details__item span,
+.emergency-card__meta span,
+.emergency-card__section span,
+.portal-feedback-review__meta span {
+  display: block;
+  color: var(--color-text-soft);
+  font-size: 0.77rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dashboard-expense-card strong,
+.dashboard-report-row strong,
+.dashboard-card__meta strong,
+.dashboard-card__footer strong,
+.dashboard-vehicle-card__stat strong,
+.dashboard-card__insight strong,
+.profile-detail strong,
+.mechanic-rating-details__item strong,
+.complaint-details__item strong,
+.emergency-card__meta strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--color-text-strong);
+}
+
+.dashboard-report-list,
+.dashboard-history-timeline,
+.notifications-list,
+.portal-feedback-review-list,
+.emergency-board__list,
+.change-password-side-card__list,
+.profile-details,
+.complaint-details {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.dashboard-report-row,
+.portal-feedback-review__meta,
+.emergency-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.dashboard-report-row__summary {
+  text-align: right;
+}
+
+.dashboard-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--color-primary-soft), rgba(14, 126, 132, 0.12));
+  color: var(--color-text-strong);
+  font-weight: 800;
+}
+
+.dashboard-card__pill,
+.dashboard-card__subpill,
+.emergency-card__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  width: fit-content;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-secondary-soft) 72%, var(--color-surface-strong) 28%);
+  color: var(--color-secondary-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.dashboard-card__subpill {
+  background: color-mix(in srgb, var(--color-primary-soft) 72%, var(--color-surface-strong) 28%);
+  color: var(--color-primary-strong);
+}
+
+.dashboard-card__pill--overdue,
+.dashboard-health-card--overdue,
+.emergency-card__badge--priority {
+  background: color-mix(in srgb, var(--color-error-soft) 74%, var(--color-surface-strong) 26%);
+  color: var(--color-error);
+}
+
+.dashboard-card__pill--due-soon,
+.dashboard-health-card--due-soon {
+  background: color-mix(in srgb, var(--color-warning-soft) 74%, var(--color-surface-strong) 26%);
+  color: var(--color-warning);
+}
+
+.dashboard-card__pill--active,
+.dashboard-health-card--active {
+  background: color-mix(in srgb, var(--color-secondary-soft) 74%, var(--color-surface-strong) 26%);
+  color: var(--color-secondary-strong);
+}
+
+.dashboard-card__pill--healthy {
+  background: color-mix(in srgb, var(--color-success-soft) 74%, var(--color-surface-strong) 26%);
+  color: var(--color-success);
+}
+
+.dashboard-card__content,
+.dashboard-card__timeline-vehicle,
+.dashboard-card__engagement,
+.portal-feedback-form,
+.mechanic-rating-form,
+.complaint-form,
+.emergency-form__grid,
+.profile-summary__status,
+.profile-summary__highlights,
+.change-password-form,
+.edit-profile-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.dashboard-vehicle-card__stats,
+.dashboard-card__meta,
+.dashboard-card__footer,
+.dashboard-card__insight-grid,
+.profile-summary__status,
+.profile-summary__highlights,
+.edit-profile-summary__details,
+.change-password-summary__details {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-card__insight-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-history-item {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.8rem;
+}
+
+.dashboard-history-item__rail {
+  position: relative;
+}
+
+.dashboard-history-item__rail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -1rem;
+  left: 50%;
+  width: 0.14rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(198, 116, 52, 0.3), rgba(14, 126, 132, 0.08));
+}
+
+.dashboard-history-item__pin {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-primary), #edbc85);
+  box-shadow: 0 0 0 0.3rem rgba(198, 116, 52, 0.12);
+}
+
+.dashboard-empty,
+.notifications-empty,
+.chat-empty-state,
+.emergency-empty,
+.portal-feedback-form__empty,
+.add-service-empty,
+.emergency-empty-state,
+.complaint-card--empty,
+.mechanic-rating-card--empty {
+  display: grid;
+  gap: 0.75rem;
+  place-items: start;
+  padding: 1.4rem;
+  border: 1px dashed color-mix(in srgb, var(--color-primary) 20%, var(--color-line));
+  border-radius: var(--radius-xl);
+  background: color-mix(in srgb, var(--color-primary-soft) 40%, var(--color-surface-strong) 60%);
+  color: var(--color-text-muted);
+}
+
+.dashboard-empty__badge,
+.notifications-empty__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-soft) 70%, var(--color-surface-strong) 30%);
+  color: var(--color-primary-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.profile-summary__top,
+.edit-profile-summary__top,
+.change-password-summary__identity,
+.mechanic-rating-summary,
+.complaint-summary,
+.chat-thread-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.profile-summary__avatar,
+.edit-profile-summary__avatar,
+.change-password-summary__icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--color-primary), #efba7d);
+  color: #1b1712;
+  font-weight: 800;
+}
+
+.profile-summary__identity h2,
+.edit-profile-summary__identity h2,
+.change-password-summary__identity h2 {
+  font-size: 1.35rem;
+  color: #fff9f4;
+}
+
+.profile-summary__identity span,
+.edit-profile-summary__identity span,
+.change-password-summary__identity span,
+.mechanic-rating-summary__label {
+  color: rgba(255, 242, 226, 0.68);
+}
+
+.profile-summary__highlight,
+.profile-summary__status-item,
+.change-password-summary__details > div,
+.edit-profile-summary__details > div {
+  padding: 0.9rem 0.95rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-summary__highlight strong,
+.profile-summary__status-item strong,
+.change-password-summary__details strong,
+.edit-profile-summary__details strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: #fff9f4;
+}
+
+.profile-summary__progress {
+  position: relative;
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.profile-summary__progress::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--profile-progress, 0%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-primary), #edc088);
+}
+
+.profile-summary__progress span {
+  display: none;
+}
+
+.profile-detail,
+.change-password-side-card__list > div,
+.mechanic-rating-details__item,
+.complaint-details__item {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.edit-profile-form,
+.change-password-form,
+.portal-feedback-form,
+.complaint-form,
+.mechanic-rating-form,
+.emergency-form__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.edit-profile-form__section,
+.edit-profile-form__field--full,
+.emergency-field--full {
+  grid-column: 1 / -1;
+}
+
+.edit-profile-form__section,
+.change-password-form__checks,
+.portal-feedback-form__rating-label,
+.mechanic-rating-form__rating-label,
+.emergency-form__vehicle-note {
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface-muted) 72%, var(--color-surface-strong) 28%);
+}
+
+.edit-profile-form__section p {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.edit-profile-form__section span,
+.emergency-form__vehicle-note span,
+.portal-feedback-form__rating-label,
+.mechanic-rating-form__rating-label {
+  color: var(--color-text-muted);
+}
+
+.edit-profile-form__field,
+.change-password-form__field,
+.mechanic-rating-form__field,
+.complaint-form__field,
+.emergency-field,
+.portal-feedback-form__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.edit-profile-form__field input,
+.edit-profile-form__field textarea,
+.change-password-form__field input,
+.mechanic-rating-form__field textarea,
+.complaint-form__field textarea,
+.emergency-field input,
+.emergency-field select,
+.emergency-field textarea,
+.portal-feedback-form__field textarea,
+.chat-sidebar__search input,
+.chat-composer__input,
+.notifications-card__action,
+.add-product-card__field input,
+.add-product-card__field select,
+.add-product-card__field textarea,
+.add-service-card__field input,
+.add-service-card__field select,
+.add-service-card__field textarea {
+  min-height: 3.1rem;
+  padding: 0.85rem 1rem;
+}
+
+.add-product-card__section,
+.add-service-card__section {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  background: color-mix(in srgb, var(--color-surface-strong) 92%, white 8%);
+}
+
+.add-product-card__section-head,
+.add-service-card__section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.add-product-card__grid,
+.add-service-card__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.add-service-card__grid--single,
+.add-product-card__field--span-2,
+.add-service-card__field--span-2 {
+  grid-column: 1 / -1;
+}
+
+.add-product-card__field,
+.add-service-card__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.add-product-card__field-label,
+.add-service-card__field-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.add-product-card__field-badge,
+.add-service-card__field-badge,
+.add-product-card__section-tag,
+.add-service-card__section-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-secondary-soft) 72%, var(--color-surface-strong) 28%);
+  color: var(--color-secondary-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.add-product-card__section-tag--optional,
+.add-service-card__section-tag--optional {
+  background: color-mix(in srgb, var(--color-primary-soft) 72%, var(--color-surface-strong) 28%);
+  color: var(--color-primary-strong);
+}
+
+.add-service-card__choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.add-service-card__choices--transport {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.add-service-choice {
+  position: relative;
+  display: grid;
+  cursor: pointer;
+}
+
+.add-service-choice input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.add-service-choice__content {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-strong) 92%, white 8%);
+}
+
+.add-service-choice input:checked + .add-service-choice__content {
+  border-color: color-mix(in srgb, var(--color-primary) 24%, var(--color-line));
+  background: color-mix(in srgb, var(--color-primary-soft) 70%, var(--color-surface-strong) 30%);
+}
+
+.add-service-schedule {
+  display: grid;
+  gap: 1rem;
+}
+
+.add-service-schedule__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-secondary-soft) 44%, var(--color-surface-strong) 56%);
+}
+
+.add-service-schedule__summary-note {
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-strong) 88%, white 12%);
+}
+
+.notifications-list,
+.emergency-board__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.notifications-card,
+.emergency-card,
+.chat-thread-card {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.notifications-card--unread {
+  border-color: color-mix(in srgb, var(--color-primary) 24%, var(--color-line));
+}
+
+.notifications-card__time {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.notifications-card__vehicle,
+.mechanic-rating-summary,
+.complaint-summary {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 21rem) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.chat-sidebar__heading,
+.chat-header__actions,
+.chat-panel__meta,
+.chat-composer__actions,
+.chat-composer__attachment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.chat-sidebar__heading span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-soft) 70%, var(--color-surface-strong) 30%);
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+.chat-sidebar__search,
+.chat-composer {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.chat-thread-list,
+.chat-messages {
+  display: grid;
+  gap: 0.75rem;
+  max-height: 34rem;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.chat-thread-card {
+  padding: 0.95rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface-strong) 92%, white 8%);
+  text-align: left;
+}
+
+.chat-thread-card--active {
+  border-color: color-mix(in srgb, var(--color-primary) 28%, var(--color-line));
+  background: color-mix(in srgb, var(--color-primary-soft) 68%, var(--color-surface-strong) 32%);
+}
+
+.chat-panel__header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.chat-messages {
+  padding: 0.5rem 0.2rem 0 0;
+}
+
+.chat-message-day {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-message-day span {
+  display: inline-flex;
+  min-height: 1.8rem;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface-muted) 76%, var(--color-surface-strong) 24%);
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.chat-message {
+  display: flex;
+}
+
+.chat-message--incoming {
+  justify-content: flex-start;
+}
+
+.chat-message--own {
+  justify-content: flex-end;
+}
+
+.chat-message__bubble {
+  max-width: min(36rem, 88%);
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.95rem 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-strong) 92%, white 8%);
+}
+
+.chat-message--own .chat-message__bubble {
+  border-color: color-mix(in srgb, var(--color-primary) 24%, var(--color-line));
+  background: color-mix(in srgb, var(--color-primary-soft) 68%, var(--color-surface-strong) 32%);
+}
+
+.chat-message__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.chat-message__image-link img,
+.chat-composer__attachment img {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-line);
+}
+
+.chat-composer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.chat-composer__attachment {
+  padding: 0.85rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-strong) 92%, white 8%);
+}
+
+.chat-composer__attachment button {
+  min-height: 2.4rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface-strong) 88%, white 12%);
+}
+
+.chat-composer__actions {
+  justify-content: flex-end;
+}
+
+.chat-composer__upload input {
+  display: none;
+}
+
+.portal-feedback-form__stars,
+.mechanic-rating-form__stars {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portal-feedback-form__star,
+.mechanic-rating-form__star {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface-strong) 88%, white 12%);
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+}
+
+.portal-feedback-form__star--active,
+.mechanic-rating-form__star--active {
+  background: linear-gradient(135deg, var(--color-primary-strong), var(--color-primary));
+  color: #fff7f1;
+  border-color: transparent;
+}
+
+.portal-feedback-review {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.portal-feedback-review__answers {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.portal-feedback-review__answer {
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface-muted) 72%, var(--color-surface-strong) 28%);
+}
+
+.portal-feedback-review__answer strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.complaint-form__field textarea,
+.mechanic-rating-form__field textarea,
+.portal-feedback-form__field textarea {
+  min-height: 8rem;
+}
+
+.complaint-summary span,
+.mechanic-rating-summary span {
+  color: rgba(255, 242, 226, 0.68);
+}
+
+.emergency-form__grid,
+.emergency-board__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.emergency-card__badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.emergency-card__section p,
+.notifications-card__message,
+.dashboard-card__content p,
+.dashboard-card__history-note,
+.dashboard-card__supporting {
+  color: var(--color-text-soft);
+}
+
+.dashboard-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.dashboard-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.44);
+  backdrop-filter: blur(8px);
+}
+
+.dashboard-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(28rem, 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(198, 116, 52, 0.16), transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-panel-raised) 96%, black 4%), color-mix(in srgb, var(--color-panel) 92%, black 8%));
+  color: var(--color-panel-text);
+  box-shadow: var(--shadow-xl);
+}
+
+.dashboard-modal__panel h2 {
+  margin: 0.9rem 0 0.6rem;
+  color: var(--color-panel-text);
+}
+
+.dashboard-modal__panel p {
+  color: var(--color-panel-text-muted);
+}
+
+.dashboard-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.dashboard-modal__button {
+  min-height: 3rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.dashboard-modal__button--secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff5e9;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1080px) {
+  .add-product-layout,
+  .add-service-layout,
+  .change-password-grid,
+  .portal-feedback-grid,
+  .complaint-grid,
+  .mechanic-rating-grid,
+  .emergency-layout,
+  .chat-layout,
+  .dashboard-hero,
+  .notifications-hero,
+  .profile-hero,
+  .edit-profile-hero,
+  .change-password-hero,
+  .portal-feedback-hero,
+  .complaint-hero,
+  .mechanic-rating-hero,
+  .emergency-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-expense-grid,
+  .dashboard-report-grid,
+  .dashboard-grid,
+  .dashboard-card__insight-grid,
+  .notifications-list,
+  .emergency-board__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-page,
+  .add-product-page,
+  .add-service-page,
+  .profile-page,
+  .edit-profile-page,
+  .change-password-page,
+  .notifications-page,
+  .portal-feedback-page,
+  .complaint-page,
+  .mechanic-rating-page,
+  .emergency-page,
+  .chat-page {
+    padding: 0.75rem;
+  }
+
+  .dashboard-hero,
+  .add-product-hero,
+  .add-service-hero,
+  .profile-hero,
+  .edit-profile-hero,
+  .change-password-hero,
+  .notifications-hero,
+  .portal-feedback-hero,
+  .complaint-hero,
+  .mechanic-rating-hero,
+  .emergency-hero,
+  .chat-header,
+  .dashboard-section,
+  .notifications-board,
+  .profile-card,
+  .edit-profile-card,
+  .change-password-card,
+  .change-password-side-card,
+  .portal-feedback-card,
+  .complaint-card,
+  .mechanic-rating-card,
+  .emergency-form,
+  .emergency-board,
+  .chat-sidebar,
+  .chat-panel {
+    border-radius: var(--radius-xl);
+  }
+
+  .dashboard-hero__signalbar,
+  .dashboard-hero__stats,
+  .dashboard-expense-grid,
+  .dashboard-report-grid,
+  .dashboard-grid,
+  .dashboard-card__meta,
+  .dashboard-card__footer,
+  .dashboard-vehicle-card__stats,
+  .dashboard-card__insight-grid,
+  .profile-summary__status,
+  .profile-summary__highlights,
+  .edit-profile-summary__details,
+  .change-password-summary__details,
+  .edit-profile-form,
+  .change-password-form,
+  .portal-feedback-form,
+  .complaint-form,
+  .mechanic-rating-form,
+  .emergency-form__grid,
+  .add-product-card__grid,
+  .add-service-card__grid,
+  .add-service-card__choices,
+  .add-service-card__choices--transport,
+  .notifications-list,
+  .emergency-board__list {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-section__header,
+  .dashboard-card__top,
+  .dashboard-card__footer,
+  .dashboard-card__timeline-header,
+  .dashboard-card__actions,
+  .notifications-board__header,
+  .chat-panel__header,
+  .chat-panel__meta,
+  .chat-composer__actions,
+  .dashboard-modal__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-history-item {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-history-item__rail {
+    display: none;
+  }
+
+  .add-product-hero__top,
+  .add-service-hero__top,
+  .notifications-hero__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chat-message__bubble {
+    max-width: 100%;
+  }
+}
